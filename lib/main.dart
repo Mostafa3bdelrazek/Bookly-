@@ -4,16 +4,15 @@ import 'package:get/get.dart';
 import 'features/splash/presentation/views/splash_view.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Bookly());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Bookly extends StatelessWidget {
+  const Bookly({super.key});
   @override
   Widget build(BuildContext context) {
     return const GetMaterialApp(
       home: SplashView(),
-      
     );
   }
 }
