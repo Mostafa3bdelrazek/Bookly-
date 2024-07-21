@@ -1,5 +1,7 @@
 import 'package:bookly/core/assets.dart';
+import 'package:bookly/core/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
   const BestSellerListViewItem({super.key});
@@ -25,9 +27,18 @@ class BestSellerListViewItem extends StatelessWidget {
               ),
             ),
           ),
-          const Column(
+          SizedBox(width: 30.w),
+          Column(
             children: [
-              Text(''),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.5,
+                child: Text(
+                  'Harry Potter and the Goblet of Fire',
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: Styles.textStyle20,
+                ),
+              ),
             ],
           )
         ],
