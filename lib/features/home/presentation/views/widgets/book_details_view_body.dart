@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'book_action.dart';
 import 'custom_book_details_view_app_bar.dart';
+import 'similar_books_list_view.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
@@ -23,15 +24,15 @@ class BookDetailsViewBody extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: width * 0.2),
             child: const CustomBookImage(),
           ),
-          SizedBox(
-            height: 43.h,
+          const SizedBox(
+            height: 43,
           ),
           Text(
             'the jungle book',
             style: Styles.textStyle30,
           ),
-          SizedBox(
-            height: 6.h,
+          const SizedBox(
+            height: 6,
           ),
           Opacity(
             opacity: 0.7,
@@ -43,16 +44,35 @@ class BookDetailsViewBody extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
-            height: 18.h,
+          const SizedBox(
+            height: 18,
           ),
           const BookRating(mainAxisAlignment: MainAxisAlignment.center),
-          SizedBox(
-            height: 37.h,
+          const SizedBox(
+            height: 37,
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8.0),
-            child: BookAction(),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8.0.sp),
+            child: const BookAction(),
+          ),
+          const SizedBox(
+            height: 50,
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'You can also like',
+              style: Styles.textStyle14.copyWith(
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.15,
+            child: const SimilarBooksListView(),
           ),
         ],
       ),
