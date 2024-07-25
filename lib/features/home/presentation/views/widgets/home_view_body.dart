@@ -1,6 +1,6 @@
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/styles.dart';
-import 'package:bookly/features/home/presentation/views/widgets/books_list_view.dart';
+import 'package:bookly/features/home/presentation/views/widgets/featured_books_list_view.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -25,7 +25,7 @@ class HomeViewBody extends StatelessWidget {
               ),
               SizedBox(
                 height: 200.h,
-                child: const BooksListView(),
+                child: const FeaturedBooksListView(),
               ),
               const SizedBox(
                 height: 50,
