@@ -4,8 +4,8 @@ import 'package:equatable/equatable.dart';
 import 'package:bloc/bloc.dart';
 part 'featured_books_state.dart';
 
-class BooksCubit extends Cubit<FeaturedBooksState> {
-  BooksCubit(this.homeRepo) : super(FeaturedBooksInitial());
+class FeaturedBooksCubit extends Cubit<FeaturedBooksState> {
+  FeaturedBooksCubit(this.homeRepo) : super(FeaturedBooksInitial());
 
   final HomeRepo homeRepo;
 
