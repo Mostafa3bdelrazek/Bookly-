@@ -23,7 +23,7 @@ class BookListViewItem extends StatelessWidget {
             AspectRatio(
                 aspectRatio: 2.5 / 4,
                 child: CustomBookImage(
-                    imageUrl: bookModel.volumeInfo.imageLinks.thumbnail)),
+                    imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail??"")),
             SizedBox(width: 30.w),
             Expanded(
               child: Column(

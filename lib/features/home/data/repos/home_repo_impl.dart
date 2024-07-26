@@ -14,11 +14,15 @@ class HomeRepoImpl implements HomeRepo {
     try {
       var data = await apiService.get(
         endPoint:
-            'volumes?Filtering=free-ebooks&q=subject:programming&Sorting=newest',
+            'volumes?Filtering=free-ebooks&q=flutter &Sorting=newest',
       );
       List<BookModel> books = [];
       for (var item in data['items']) {
-        books.add(BookModel.fromJson(item));
+        try {
+          books.add(BookModel.fromJson(item));
+        } catch (e) {
+          books.add(BookModel.fromJson(item));
+        }
       }
 
       return right(books);
@@ -34,8 +38,7 @@ class HomeRepoImpl implements HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
       var data = await apiService.get(
-        endPoint:
-            'volumes?Filtering=free-ebooks&q=subject:programming',
+        endPoint: 'volumes?Filtering=free-ebooks&q=computer science',
       );
       List<BookModel> books = [];
       for (var item in data['items']) {
@@ -49,6 +52,5 @@ class HomeRepoImpl implements HomeRepo {
       }
       return left(ServerFailure(errorMessage: e.toString()));
     }
-
   }
 }
