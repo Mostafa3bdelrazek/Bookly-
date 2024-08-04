@@ -3,6 +3,7 @@ import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_image.dart';
+import 'package:bookly/features/home/presentation/views/widgets/page_count.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -48,8 +49,9 @@ class BookListViewItem extends StatelessWidget {
                     bookModel.volumeInfo.authors?[0] ?? '',
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: Styles.textStyle14
-                        .copyWith(color: const Color(0xff707070)),
+                    style: Styles.textStyle14.copyWith(
+                      color: const Color(0xff707070),
+                    ),
                   ),
                   SizedBox(
                     height: 3.h,
@@ -57,13 +59,12 @@ class BookListViewItem extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        // '19,00 €',
                         'Free',
                         style: Styles.textStyle20
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
                       const Spacer(),
-                      // const BookRating(),
+                      PageCountWidget(bookModel: bookModel),
                     ],
                   )
                 ],

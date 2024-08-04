@@ -1,4 +1,5 @@
 import 'package:bookly/features/home/data/models/book_model/book_model.dart';
+import 'package:bookly/features/home/presentation/views/widgets/page_count.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/styles.dart';
@@ -20,7 +21,7 @@ class BookDetailsSection extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 43,
+          height: 33,
         ),
         Text(
           bookModel.volumeInfo.title!,
@@ -37,7 +38,6 @@ class BookDetailsSection extends StatelessWidget {
           child: Text(
             bookModel.volumeInfo.authors?[0] ?? '',
             style: Styles.textStyle18.copyWith(
-              // maxLines: 2,
               overflow: TextOverflow.ellipsis,
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.w500,
@@ -45,13 +45,16 @@ class BookDetailsSection extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 18,
+          height: 12,
         ),
-        // const BookRating(
-        //   mainAxisAlignment: MainAxisAlignment.center,
-        // ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            PageCountWidget(bookModel: bookModel),
+          ],
+        ),
         const SizedBox(
-          height: 37,
+          height: 24,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
