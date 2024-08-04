@@ -6,7 +6,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/home/data/repos/home_repo_impl.dart';
-import '../../features/home/presentation/manager/similar_books/similar_books_cubit.dart';
+import '../../features/home/presentation/manager/similar_books_cubit/similar_books_cubit.dart';
+import '../../features/search/data/search_repo_impl.dart';
+import '../../features/search/presentation/manager/search_books_cubit/search_books_cubit.dart';
 import '../../features/splash/presentation/views/splash_view.dart';
 import 'di.dart';
 
@@ -31,13 +33,19 @@ abstract class AppRouter {
           create: (context) => SimilarBooksCubit(
             getIt.get<HomeRepoImpl>(),
           ),
-          child: BookDetailsView(bookModel: state.extra as BookModel,),
+          child: BookDetailsView(
+            bookModel: state.extra as BookModel,
+          ),
         ),
       ),
       GoRoute(
         path: '/searchView',
-        builder: (context, state) => const SearchView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => SearchBooksCubit(getIt.get<SearchRepoImpl>()),
+          child: const SearchView(),
+        ),
       ),
     ],
   );
 }
+

@@ -3,7 +3,9 @@
         "appbar",
         "Bookly",
         "dartz",
+        "intitle",
         "screenutil",
         "vsync"
-    ]
+    ],
+    "cmake.ignoreCMakeListsMissing": true
 }

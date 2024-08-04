@@ -45,8 +45,8 @@ class BookListViewItem extends StatelessWidget {
                     height: 3.h,
                   ),
                   Text(
-                    bookModel.volumeInfo.authors![0],
-                    maxLines: 2,
+                    bookModel.volumeInfo.authors?[0] ?? '',
+                    maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: Styles.textStyle14
                         .copyWith(color: const Color(0xff707070)),
